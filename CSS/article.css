@@ -1,4 +1,7 @@
 /*-----------------------------------ARTICLE----------------------------------------*/
+
+
+
 .article__content {
     background-color: #d9d9d9;
     flex: 1 1 70%;
@@ -19,6 +22,22 @@
     font-size: 24px;
     line-height: 24px;
     color: #000000;
+    margin-bottom: 30px;
+}
+
+.article__flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article__views {
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 24px;
+    color: #9a9696;
     margin-bottom: 30px;
 }
 
@@ -183,4 +202,20 @@
     width: 200px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.new-comments__flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-comments__add-comment {
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #9a9696;
+    margin-bottom: 30px;
 }

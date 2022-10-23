@@ -136,9 +136,11 @@ require_once 'include/config.php';
                                     </div>
                                     <div class="popular__content">
                                         <div class="popular__title">
-                                            <?= $pop_art['title'] ?>
+                                            <a class="popular__title" style="cursor:pointer" href="pages/article.php?id=<?php echo $pop_art['id'] ?>">
+                                                <?= $pop_art['title'] ?>
+                                            </a>
                                         </div>
-                                        <div class="popular__subtitle">
+                                        <div class=" popular__subtitle">
                                             Категорія: <?= $cat['title'] ?>
                                         </div>
                                         <div class="popular__text">
@@ -176,8 +178,7 @@ require_once 'include/config.php';
                                 $article = mysqli_fetch_assoc($article_q);
                             ?>
                                 <div class="new-comments__item">
-                                    <div class="new-comments__images">
-                                        <img class="new-comments__image" src="static/commentators_images/<?= $comment['image']; ?>">
+                                    <div class="new-comments__images"><img class="new-comments__image" src="https://www.gravatar.com/avatar/<?= md5($comment['email']) ?>?s=1250">
                                     </div>
                                     <div class="new-comments__content">
                                         <div class="new-comments__title">
