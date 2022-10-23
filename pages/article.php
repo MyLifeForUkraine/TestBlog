@@ -20,6 +20,34 @@ require_once '../include/config.php';
     <div class="root">
         <div class="main">
             <div class="container">
+                <?php
+                if (isset($_POST['do_post'])) {
+                    $errors = array();
+                    if ($_POST['name'] == '') {
+                        $errors[] = 'Введіть ім\'я';
+                    }
+                    if ($_POST['nickname'] == '') {
+                        $errors[] = 'Введіть нікнейм';
+                    }
+                    if ($_POST['email'] == '') {
+                        $errors[] = 'Введіть пошту';
+                    }
+                    if ($_POST['comment'] == '') {
+                        $errors[] = 'Напишіть коментар';
+                    }
+                    if (empty($errors)) {
+                        mysqli_query($connection, "INSERT INTO `Comments` (`author`,`nickname`,`email`,`text`,`article_id`) VALUES ('" . $_POST['name'] . "', '" . $_POST['nickname'] . "', '" . $_POST['email'] . "', '" . $_POST['comment'] . "', '" . $_GET['id'] . "')");
+                        echo '<span style="color:green; font-size:16px;font-weight:bold;display:block;margin-bottom:10px;">' . 'Дякую! Ваш коментар доданий!' . '</span>';
+                        $_POST['name'] = '';
+                        $_POST['nickname'] = '';
+                        $_POST['email'] = '';
+                        $_POST['comment'] = '';
+                    } else {
+                        echo '<span style="color:red; font-size:16px;font-weight:bold;display:block;margin-bottom:10px;">' . $errors[0] . '</span>';
+                    }
+                }
+
+                ?>
                 <?php include '../include/header.php' ?>
                 <?php
                 $article_q = mysqli_query($connection, 'SELECT * FROM `Articles` WHERE `id`=' . (int) $_GET['id']);
@@ -143,7 +171,7 @@ require_once '../include/config.php';
                             <h2 class="new-comments__main-title">
                                 Коментарі:
                             </h2>
-                            <a class="new-comments__add-comment">
+                            <a class="new-comments__add-comment" href="#">
                                 Додати свій
                             </a>
                         </div>
@@ -176,6 +204,23 @@ require_once '../include/config.php';
                             }
                             ?>
                         </div>
+                    </div>
+                </section>
+                <section class="main__add add">
+                    <div id="add-comment-form" class="add__container">
+                        <h2 class="add__title">
+                            Додати коментар:
+                        </h2>
+                        <form class="add__form" method="POST" action="article.php?id=<?= $_GET['id'] ?>#add-comment-form">
+
+                            <div class="add__inputs">
+                                <input class="add__input" type="text" name="name" placeholder="Ваш ім'я" value=<?= $_POST['name'] ?>>
+                                <input class="add__input" type="text" name="nickname" placeholder="Ваш нікнейм" value=<?= $_POST['nickname'] ?>>
+                                <input class="add__input" type="text" name="email" placeholder="Ваша електронна пошта" value=<?= $_POST['email'] ?>>
+                            </div>
+                            <textarea class="add__textarea" name="comment" placeholder="Коментар" value=<?= $_POST['comment'] ?>></textarea>
+                            <input type="submit" name="do_post" value="Додати коментар" class="add__button">
+                        </form>
                     </div>
                 </section>
                 <?php include '../include/footer.php' ?>

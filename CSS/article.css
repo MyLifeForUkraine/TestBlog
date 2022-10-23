@@ -35,7 +35,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 120px;
+    font-size: 20px;
     line-height: 24px;
     color: #9a9696;
     margin-bottom: 30px;
@@ -218,4 +218,62 @@
     line-height: 24px;
     color: #9a9696;
     margin-bottom: 30px;
+}
+
+/*------------------------------------------ADD----------------------------*/
+.main__add {}
+
+.add {}
+
+.add__container {
+    width: 63vw;
+    background-color: #d9d9d9;
+    padding: 20px;
+}
+
+.add__title {
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.add__form {}
+
+.add__inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.add__input {
+    width: 33%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.add__textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.add__button {
+    background-color: #1f1d1d;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }

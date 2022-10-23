@@ -537,3 +537,32 @@ a {
     border-top: 0.5px solid #ffffff;
     border-bottom: 0.5px solid #ffffff;
 }
+
+/*---------------------------------------PAGINATOR----------------------------------*/
+.paginator__flex {
+    display: flex;
+    justify-content: center;
+    /* border: 3px solid green; */
+}
+
+.paginator__left {
+    /* flex: 1 1 50%; */
+    margin-right: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.paginator__right {
+    /* flex: 1 1 50%; */
+    margin-left: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
